@@ -1,0 +1,16 @@
+{
+  "name": "fatourati-sariaa",
+  "version": "1.1.0",
+  "description": "Fatourati Android app with 3 languages, currencies, and AdMob",
+  "main": "www/index.html",
+  "scripts": {
+    "cap:sync": "npx cap sync android",
+    "cap:open": "npx cap open android"
+  },
+  "dependencies": {
+    "@capacitor/core": "^6.1.2",
+    "@capacitor/cli": "^6.1.2",
+    "@capacitor/android": "^6.1.2",
+    "@capacitor-community/admob": "^6.0.0"
+  }
+}
