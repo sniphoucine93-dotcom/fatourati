@@ -1,0 +1,17 @@
+{
+  "name": "fatourati",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fatourati - simple multilingual invoice maker",
+  "main": "www/index.html",
+  "scripts": {
+    "cap:sync": "npx cap sync android",
+    "cap:open": "npx cap open android",
+    "android:add": "npx cap add android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.1.2",
+    "@capacitor/cli": "^6.1.2",
+    "@capacitor/core": "^6.1.2"
+  }
+}
