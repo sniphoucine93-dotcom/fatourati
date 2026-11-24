@@ -1,0 +1,6 @@
+{
+  "appId": "com.h6n.fatourati",
+  "appName": "Fatourati",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
