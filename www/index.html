@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#123b35">
+  <meta name="description" content="فاتوراتي - تطبيق بسيط لإنشاء الفواتير وحفظها وطباعتها">
+  <title>فاتوراتي | Fatourati</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><div class="brand-mark">F</div><div><strong>فاتوراتي</strong><small>FATOURATI</small></div></div>
+    <div class="top-actions">
+      <select id="language" aria-label="Language"><option value="ar">العربية</option><option value="fr">Français</option><option value="en">English</option></select>
+      <button class="icon-btn" id="historyBtn" type="button" title="الفواتير المحفوظة">▤</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="welcome">
+      <div><span class="eyebrow" data-i18n="workspace">مساحة عملك</span><h1 data-i18n="newInvoice">إنشاء فاتورة جديدة</h1><p data-i18n="intro">أنشئ فاتورتك واحفظها أو اطبعها في ثوانٍ.</p></div>
+      <div class="welcome-icon">▧</div>
+    </section>
+
+    <div class="toolbar">
+      <div class="field compact"><label for="currency" data-i18n="currency">العملة</label><select id="currency"><option value="DZD">DZD - دج</option><option value="EUR">EUR - €</option><option value="USD">USD - $</option><option value="MAD">MAD - DH</option><option value="SAR">SAR - ر.س</option></select></div>
+      <div class="field compact"><label for="invoiceDate" data-i18n="date">التاريخ</label><input id="invoiceDate" type="date"></div>
+      <div class="field compact"><label for="invoiceNo" data-i18n="invoiceNo">رقم الفاتورة</label><input id="invoiceNo" type="text" value="FAC-0001"></div>
+    </div>
+
+    <section class="panel">
+      <div class="section-title"><span class="step">1</span><h2 data-i18n="sellerInfo">معلومات البائع</h2></div>
+      <div class="form-grid">
+        <div class="field"><label for="sellerName" data-i18n="businessName">اسم المحل / المؤسسة</label><input id="sellerName" placeholder="اسم نشاطك التجاري"></div>
+        <div class="field"><label for="sellerPhone" data-i18n="phone">الهاتف</label><input id="sellerPhone" type="tel" placeholder="+213"></div>
+        <div class="field full"><label for="sellerAddress" data-i18n="address">العنوان</label><input id="sellerAddress" placeholder="العنوان"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-title"><span class="step">2</span><h2 data-i18n="clientInfo">معلومات الزبون</h2></div>
+      <div class="form-grid">
+        <div class="field"><label for="clientName" data-i18n="clientName">اسم الزبون</label><input id="clientName" placeholder="اسم الزبون"></div>
+        <div class="field"><label for="clientPhone" data-i18n="phone">الهاتف</label><input id="clientPhone" type="tel" placeholder="+213"></div>
+        <div class="field full"><label for="clientAddress" data-i18n="address">العنوان</label><input id="clientAddress" placeholder="العنوان"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-title"><span class="step">3</span><h2 data-i18n="items">المنتجات والخدمات</h2></div>
+      <div class="table-wrap">
+        <table><thead><tr><th data-i18n="product">المنتج / الخدمة</th><th data-i18n="quantity">الكمية</th><th data-i18n="unitPrice">سعر الوحدة</th><th data-i18n="lineTotal">المجموع</th><th></th></tr></thead><tbody id="itemsBody"></tbody></table>
+      </div>
+      <button class="add-btn" id="addItem" type="button"><span>＋</span><span data-i18n="addItem">إضافة منتج</span></button>
+    </section>
+
+    <section class="panel totals-panel">
+      <div class="section-title"><span class="step">4</span><h2 data-i18n="summary">ملخص الفاتورة</h2></div>
+      <div class="form-grid totals-inputs">
+        <div class="field"><label for="discount" data-i18n="discount">التخفيض</label><input id="discount" type="number" min="0" step="0.01" value="0"></div>
+        <div class="field"><label for="tax" data-i18n="tax">الضريبة % (اختياري)</label><input id="tax" type="number" min="0" max="100" step="0.01" value="0"></div>
+      </div>
+      <div class="totals">
+        <div><span data-i18n="subtotal">المجموع الجزئي</span><strong id="subtotal">0.00 DZD</strong></div>
+        <div><span data-i18n="discount">التخفيض</span><strong id="discountValue">0.00 DZD</strong></div>
+        <div><span data-i18n="taxAmount">الضريبة</span><strong id="taxValue">0.00 DZD</strong></div>
+        <div class="grand-total"><span data-i18n="totalDue">المبلغ الإجمالي</span><strong id="grandTotal">0.00 DZD</strong></div>
+      </div>
+      <div class="field notes-field"><label for="notes" data-i18n="notes">ملاحظات</label><textarea id="notes" rows="3" placeholder="ملاحظات إضافية..."></textarea></div>
+    </section>
+
+    <div class="main-actions">
+      <button class="btn btn-primary" id="saveBtn" type="button">✓ <span data-i18n="saveInvoice">حفظ الفاتورة</span></button>
+      <button class="btn btn-dark" id="printBtn" type="button">▣ <span data-i18n="printInvoice">طباعة / PDF</span></button>
+      <button class="btn btn-light" id="newBtn" type="button" data-i18n="clear">فاتورة جديدة</button>
+    </div>
+    <p class="privacy-note" data-i18n="privacy">بياناتك محفوظة على هذا الجهاز فقط، ولا يتم إرسالها إلى خادم.</p>
+  </main>
+
+  <dialog id="historyDialog" class="history-dialog">
+    <div class="dialog-head"><h2 data-i18n="savedInvoices">الفواتير المحفوظة</h2><button id="closeHistory" class="icon-btn" type="button">✕</button></div>
+    <div id="historyList" class="history-list"></div>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
