@@ -4,11 +4,12 @@ A lightweight multilingual invoice maker built with HTML, CSS and JavaScript, re
 
 ## Current features
 - Arabic, French and English interface
-- DZD, EUR, USD, MAD and SAR currencies
+- DZD, EUR, USD, MAD, SAR, TND, LYD and MRU currencies
 - Seller and customer details
 - Multiple invoice items with automatic calculations
 - Optional discount and tax percentage
 - Save and reopen invoices locally on the device
+- Export and restore invoice backups as JSON files
 - Print invoices or save as PDF using the device/browser print dialog
 - Responsive layout for mobile and desktop
 
