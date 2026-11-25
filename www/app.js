@@ -1,14 +1,14 @@
 (() => {
   const $ = (id) => document.getElementById(id);
   const translations = {
-    ar:{workspace:"مساحة عملك",newInvoice:"إنشاء فاتورة جديدة",intro:"أنشئ فاتورتك واحفظها أو اطبعها في ثوانٍ.",currency:"العملة",date:"التاريخ",createdTime:"تاريخ ووقت إنشاء الفاتورة",invoiceNo:"رقم الفاتورة",sellerInfo:"معلومات البائع",businessName:"اسم المحل / المؤسسة",phone:"الهاتف",address:"العنوان",clientInfo:"معلومات الزبون",clientName:"اسم الزبون",items:"المنتجات والخدمات",product:"المنتج / الخدمة",quantity:"الكمية",unitPrice:"سعر الوحدة",lineTotal:"المجموع",addItem:"إضافة منتج",summary:"ملخص الفاتورة",discount:"التخفيض",tax:"الضريبة % (اختياري)",taxAmount:"الضريبة",subtotal:"المجموع الجزئي",totalDue:"المبلغ الإجمالي",notes:"ملاحظات",saveInvoice:"حفظ الفاتورة",printInvoice:"طباعة / PDF",clear:"فاتورة جديدة",privacy:"بياناتك محفوظة على هذا الجهاز فقط، ولا يتم إرسالها إلى خادم.",savedInvoices:"الفواتير المحفوظة",empty:"لا توجد فواتير محفوظة بعد.",load:"فتح",delete:"حذف",saved:"تم حفظ الفاتورة بنجاح",deleted:"تم حذف الفاتورة",confirmDelete:"هل تريد حذف هذه الفاتورة؟",needItem:"أضف منتجاً واحداً على الأقل.",untitled:"فاتورة",confirmNew:"هل تريد بدء فاتورة جديدة؟ سيتم مسح البيانات غير المحفوظة.",notePlaceholder:"ملاحظات إضافية...",productPlaceholder:"اسم المنتج أو الخدمة"},
-    fr:{workspace:"Votre espace",newInvoice:"Créer une facture",intro:"Créez, enregistrez ou imprimez votre facture en quelques secondes.",currency:"Devise",date:"Date",createdTime:"Date et heure de création",invoiceNo:"N° de facture",sellerInfo:"Informations du vendeur",businessName:"Nom du commerce / entreprise",phone:"Téléphone",address:"Adresse",clientInfo:"Informations du client",clientName:"Nom du client",items:"Produits et services",product:"Produit / service",quantity:"Quantité",unitPrice:"Prix unitaire",lineTotal:"Total",addItem:"Ajouter un article",summary:"Résumé de la facture",discount:"Remise",tax:"Taxe % (facultatif)",taxAmount:"Taxe",subtotal:"Sous-total",totalDue:"Total à payer",notes:"Notes",saveInvoice:"Enregistrer",printInvoice:"Imprimer / PDF",clear:"Nouvelle facture",privacy:"Vos données restent sur cet appareil et ne sont envoyées à aucun serveur.",savedInvoices:"Factures enregistrées",empty:"Aucune facture enregistrée.",load:"Ouvrir",delete:"Supprimer",saved:"Facture enregistrée avec succès",deleted:"Facture supprimée",confirmDelete:"Supprimer cette facture ?",needItem:"Ajoutez au moins un article.",untitled:"Facture",confirmNew:"Créer une nouvelle facture ? Les données non enregistrées seront effacées.",notePlaceholder:"Notes supplémentaires...",productPlaceholder:"Nom du produit ou service"},
-    en:{workspace:"Your workspace",newInvoice:"Create a new invoice",intro:"Create, save or print your invoice in seconds.",currency:"Currency",date:"Date",createdTime:"Invoice date and time",invoiceNo:"Invoice number",sellerInfo:"Seller information",businessName:"Shop / business name",phone:"Phone",address:"Address",clientInfo:"Customer information",clientName:"Customer name",items:"Products and services",product:"Product / service",quantity:"Quantity",unitPrice:"Unit price",lineTotal:"Line total",addItem:"Add item",summary:"Invoice summary",discount:"Discount",tax:"Tax % (optional)",taxAmount:"Tax",subtotal:"Subtotal",totalDue:"Total due",notes:"Notes",saveInvoice:"Save invoice",printInvoice:"Print / PDF",clear:"New invoice",privacy:"Your data stays on this device and is not sent to a server.",savedInvoices:"Saved invoices",empty:"No saved invoices yet.",load:"Open",delete:"Delete",saved:"Invoice saved successfully",deleted:"Invoice deleted",confirmDelete:"Delete this invoice?",needItem:"Add at least one item.",untitled:"Invoice",confirmNew:"Start a new invoice? Unsaved data will be cleared.",notePlaceholder:"Additional notes...",productPlaceholder:"Product or service name"}
+    ar:{workspace:"مساحة عملك",newInvoice:"إنشاء فاتورة جديدة",intro:"أنشئ فاتورتك واحفظها أو اطبعها في ثوانٍ.",currency:"العملة",date:"التاريخ",createdTime:"تاريخ ووقت إنشاء الفاتورة",invoiceNo:"رقم الفاتورة",sellerInfo:"معلومات البائع",businessName:"اسم المحل / المؤسسة",phone:"الهاتف",address:"العنوان",clientInfo:"معلومات الزبون",clientName:"اسم الزبون",items:"المنتجات والخدمات",product:"المنتج / الخدمة",quantity:"الكمية",unitPrice:"سعر الوحدة",lineTotal:"المجموع",addItem:"إضافة منتج",summary:"ملخص الفاتورة",discount:"التخفيض",tax:"الضريبة % (اختياري)",taxAmount:"الضريبة",subtotal:"المجموع الجزئي",totalDue:"المبلغ الإجمالي",notes:"ملاحظات",saveInvoice:"حفظ الفاتورة",printInvoice:"طباعة / PDF",clear:"فاتورة جديدة",privacy:"بياناتك محفوظة على هذا الجهاز فقط، ولا يتم إرسالها إلى خادم.",backup:"نسخ احتياطي",restore:"استرجاع نسخة",backupDone:"تم تنزيل النسخة الاحتياطية",restoreDone:"تم استرجاع الفواتير بنجاح",badBackup:"ملف النسخة الاحتياطية غير صالح",restoreConfirm:"سيتم دمج الفواتير مع الموجودة حالياً. هل تريد المتابعة؟",savedInvoices:"الفواتير المحفوظة",empty:"لا توجد فواتير محفوظة بعد.",load:"فتح",delete:"حذف",saved:"تم حفظ الفاتورة بنجاح",deleted:"تم حذف الفاتورة",confirmDelete:"هل تريد حذف هذه الفاتورة؟",needItem:"أضف منتجاً واحداً على الأقل.",untitled:"فاتورة",confirmNew:"هل تريد بدء فاتورة جديدة؟ سيتم مسح البيانات غير المحفوظة.",notePlaceholder:"ملاحظات إضافية...",productPlaceholder:"اسم المنتج أو الخدمة"},
+    fr:{workspace:"Votre espace",newInvoice:"Créer une facture",intro:"Créez, enregistrez ou imprimez votre facture en quelques secondes.",currency:"Devise",date:"Date",createdTime:"Date et heure de création",invoiceNo:"N° de facture",sellerInfo:"Informations du vendeur",businessName:"Nom du commerce / entreprise",phone:"Téléphone",address:"Adresse",clientInfo:"Informations du client",clientName:"Nom du client",items:"Produits et services",product:"Produit / service",quantity:"Quantité",unitPrice:"Prix unitaire",lineTotal:"Total",addItem:"Ajouter un article",summary:"Résumé de la facture",discount:"Remise",tax:"Taxe % (facultatif)",taxAmount:"Taxe",subtotal:"Sous-total",totalDue:"Total à payer",notes:"Notes",saveInvoice:"Enregistrer",printInvoice:"Imprimer / PDF",clear:"Nouvelle facture",privacy:"Vos données restent sur cet appareil et ne sont envoyées à aucun serveur.",backup:"Sauvegarder",restore:"Restaurer",backupDone:"Sauvegarde téléchargée",restoreDone:"Factures restaurées",badBackup:"Fichier de sauvegarde invalide",restoreConfirm:"Les factures seront fusionnées avec celles existantes. Continuer ?",savedInvoices:"Factures enregistrées",empty:"Aucune facture enregistrée.",load:"Ouvrir",delete:"Supprimer",saved:"Facture enregistrée avec succès",deleted:"Facture supprimée",confirmDelete:"Supprimer cette facture ?",needItem:"Ajoutez au moins un article.",untitled:"Facture",confirmNew:"Créer une nouvelle facture ? Les données non enregistrées seront effacées.",notePlaceholder:"Notes supplémentaires...",productPlaceholder:"Nom du produit ou service"},
+    en:{workspace:"Your workspace",newInvoice:"Create a new invoice",intro:"Create, save or print your invoice in seconds.",currency:"Currency",date:"Date",createdTime:"Invoice date and time",invoiceNo:"Invoice number",sellerInfo:"Seller information",businessName:"Shop / business name",phone:"Phone",address:"Address",clientInfo:"Customer information",clientName:"Customer name",items:"Products and services",product:"Product / service",quantity:"Quantity",unitPrice:"Unit price",lineTotal:"Line total",addItem:"Add item",summary:"Invoice summary",discount:"Discount",tax:"Tax % (optional)",taxAmount:"Tax",subtotal:"Subtotal",totalDue:"Total due",notes:"Notes",saveInvoice:"Save invoice",printInvoice:"Print / PDF",clear:"New invoice",privacy:"Your data stays on this device and is not sent to a server.",backup:"Backup",restore:"Restore",backupDone:"Backup downloaded",restoreDone:"Invoices restored",badBackup:"Invalid backup file",restoreConfirm:"Invoices will be merged with existing ones. Continue?",savedInvoices:"Saved invoices",empty:"No saved invoices yet.",load:"Open",delete:"Delete",saved:"Invoice saved successfully",deleted:"Invoice deleted",confirmDelete:"Delete this invoice?",needItem:"Add at least one item.",untitled:"Invoice",confirmNew:"Start a new invoice? Unsaved data will be cleared.",notePlaceholder:"Additional notes...",productPlaceholder:"Product or service name"}
   };
   let lang = localStorage.getItem("fatourati_lang") || "ar";
   let toastTimer;
   const currency = () => $("currency").value;
-  const money = (n) => new Intl.NumberFormat(lang === "en" ? "en-US" : lang === "fr" ? "fr-FR" : "ar-DZ",{minimumFractionDigits:2,maximumFractionDigits:2}).format(Number(n)||0) + " " + currency();
+  const money = (n, code=currency()) => new Intl.NumberFormat(lang === "en" ? "en-US" : lang === "fr" ? "fr-FR" : "ar-DZ",{minimumFractionDigits:2,maximumFractionDigits:2}).format(Number(n)||0) + " " + code;
   const t = (key) => translations[lang][key] || key;
   const showToast = (message) => { $("toast").textContent=message; $("toast").classList.add("show"); clearTimeout(toastTimer); toastTimer=setTimeout(()=>$("toast").classList.remove("show"),2500); };
   let invoiceCreatedAt = new Date();
@@ -24,7 +24,7 @@
     document.querySelectorAll("[data-i18n]").forEach(el=>{const key=el.dataset.i18n; if(translations[lang][key]) el.textContent=t(key);});
     $("notes").placeholder=t("notePlaceholder");
     document.querySelectorAll(".product-name").forEach(el=>el.placeholder=t("productPlaceholder"));
-    $("historyBtn").title=t("savedInvoices");
+    $("historyBtn").title=t("savedInvoices"); $("backupBtn").title=t("backup"); $("restoreBtn").title=t("restore");
     refreshCreatedAt();
     calculate();
   }
@@ -71,7 +71,7 @@
     if(!list.length){host.innerHTML='<div class="empty">'+t("empty")+'</div>';}
     list.forEach((item,index)=>{
       const row=document.createElement("div");row.className="history-item";
-      const info=document.createElement("div");const strong=document.createElement("strong");strong.textContent=item.id;const small=document.createElement("small");small.textContent=(item.client?.name||t("untitled"))+" · "+(item.date||"")+" · "+money(item.totals?.total||0);info.append(strong,small);
+      const info=document.createElement("div");const strong=document.createElement("strong");strong.textContent=item.id;const small=document.createElement("small");small.textContent=(item.client?.name||t("untitled"))+" · "+(item.date||"")+" · "+money(item.totals?.total||0,item.currency||"DZD");info.append(strong,small);
       const actions=document.createElement("div");actions.className="history-buttons";
       const open=document.createElement("button");open.textContent=t("load");open.onclick=()=>{$("historyDialog").close();fill(item);};
       const del=document.createElement("button");del.className="danger";del.textContent=t("delete");del.onclick=()=>{if(confirm(t("confirmDelete"))){const current=getSaved();current.splice(index,1);localStorage.setItem("fatourati_invoices",JSON.stringify(current));openHistory();showToast(t("deleted"));}};
@@ -79,11 +79,40 @@
     });
     $("historyDialog").showModal();
   }
+
+  function exportBackup(){
+    const payload={app:"Fatourati",formatVersion:1,exportedAt:new Date().toISOString(),invoices:getSaved()};
+    const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});
+    const url=URL.createObjectURL(blob),a=document.createElement("a");
+    a.href=url;a.download="fatourati-backup-"+new Date().toISOString().slice(0,10)+".json";
+    document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);showToast(t("backupDone"));
+  }
+  function importBackup(file){
+    const reader=new FileReader();
+    reader.onload=()=>{
+      try{
+        const parsed=JSON.parse(String(reader.result||""));
+        const incoming=Array.isArray(parsed)?parsed:parsed?.invoices;
+        if(!Array.isArray(incoming)||incoming.some(x=>!x||typeof x!=="object"||!x.id||!Array.isArray(x.items)))throw new Error("invalid");
+        if(!confirm(t("restoreConfirm")))return;
+        const merged=new Map(getSaved().map(x=>[String(x.id),x]));
+        incoming.forEach(x=>merged.set(String(x.id),x));
+        localStorage.setItem("fatourati_invoices",JSON.stringify([...merged.values()]));
+        showToast(t("restoreDone"));
+      }catch{showToast(t("badBackup"));}
+      $("backupFile").value="";
+    };
+    reader.onerror=()=>{showToast(t("badBackup"));$("backupFile").value="";};
+    reader.readAsText(file);
+  }
   $("addItem").addEventListener("click",()=>addRow());
   ["discount","tax","currency"].forEach(id=>$(id).addEventListener("input",calculate));
   $("saveBtn").addEventListener("click",save);
   $("printBtn").addEventListener("click",()=>window.print());
   $("historyBtn").addEventListener("click",openHistory);
+  $("backupBtn").addEventListener("click",exportBackup);
+  $("restoreBtn").addEventListener("click",()=>$("backupFile").click());
+  $("backupFile").addEventListener("change",e=>{const file=e.target.files?.[0];if(file)importBackup(file);});
   $("closeHistory").addEventListener("click",()=>$("historyDialog").close());
   $("newBtn").addEventListener("click",()=>{if(confirm(t("confirmNew"))){invoiceCreatedAt=new Date();fill({id:nextNumber(),date:$("invoiceDate").value,currency:"DZD",createdAt:invoiceCreatedAt.toISOString(),items:[{}]});}});
   $("language").value=lang;$("language").addEventListener("change",e=>{lang=e.target.value;localStorage.setItem("fatourati_lang",lang);applyLanguage();});
