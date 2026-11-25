@@ -35,6 +35,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Check JavaScript syntax
+        run: node --check www/app.js
+
       - name: Generate Android project
         run: npx cap add android
 
