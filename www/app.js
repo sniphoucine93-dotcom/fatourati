@@ -63,7 +63,7 @@
   const getSaved=()=>{try{return JSON.parse(localStorage.getItem("fatourati_invoices")||"[]");}catch{return [];}};
   function save(){
     const data=collect();if(!data.items.some(x=>x.name.trim()&&x.qty>0)){showToast(t("needItem"));return;}
-    const all=getSaved(),index=all.findIndex(x=>x.id===data.id);if(index>=0)all[index]=data;else all.unshift(data);
+    const all=getSaved(),index=all.findIndex(x=>x.id===data.id);if(index>=0){data.createdAt=all[index].createdAt||data.createdAt;all[index]=data;}else{invoiceCreatedAt=new Date();data.createdAt=invoiceCreatedAt.toISOString();refreshCreatedAt();all.unshift(data);}
     try{localStorage.setItem("fatourati_invoices",JSON.stringify(all));showToast(t("saved"));}catch{showToast("Storage is full. Export or delete old invoices.");}
   }
   function openHistory(){
