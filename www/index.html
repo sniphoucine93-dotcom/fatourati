@@ -13,6 +13,8 @@
     <div class="brand"><div class="brand-mark">F</div><div><strong>فاتوراتي</strong><small>FATOURATI</small></div></div>
     <div class="top-actions">
       <select id="language" aria-label="Language"><option value="ar">العربية</option><option value="fr">Français</option><option value="en">English</option></select>
+      <button class="icon-btn" id="backupBtn" type="button" title="نسخ احتياطي" aria-label="Backup">⇩</button>
+      <button class="icon-btn" id="restoreBtn" type="button" title="استرجاع نسخة" aria-label="Restore">⇧</button>
       <button class="icon-btn" id="historyBtn" type="button" title="الفواتير المحفوظة">▤</button>
     </div>
   </header>
@@ -24,7 +26,7 @@
     </section>
 
     <div class="toolbar">
-      <div class="field compact"><label for="currency" data-i18n="currency">العملة</label><select id="currency"><option value="DZD">DZD - دج</option><option value="EUR">EUR - €</option><option value="USD">USD - $</option><option value="MAD">MAD - DH</option><option value="SAR">SAR - ر.س</option></select></div>
+      <div class="field compact"><label for="currency" data-i18n="currency">العملة</label><select id="currency"><option value="DZD">DZD - دج</option><option value="EUR">EUR - €</option><option value="USD">USD - $</option><option value="MAD">MAD - DH</option><option value="SAR">SAR - ر.س</option><option value="TND">TND - د.ت</option><option value="LYD">LYD - ل.د</option><option value="MRU">MRU - UM</option></select></div>
       <div class="field compact"><label for="invoiceDate" data-i18n="date">التاريخ</label><input id="invoiceDate" type="date"></div>
       <div class="field compact"><label for="invoiceNo" data-i18n="invoiceNo">رقم الفاتورة</label><input id="invoiceNo" type="text" value="FAC-0001"></div>
     </div>
@@ -84,6 +86,7 @@
     <div class="dialog-head"><h2 data-i18n="savedInvoices">الفواتير المحفوظة</h2><button id="closeHistory" class="icon-btn" type="button">✕</button></div>
     <div id="historyList" class="history-list"></div>
   </dialog>
+  <input id="backupFile" type="file" accept="application/json,.json" hidden>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script src="app.js"></script>
 </body>
